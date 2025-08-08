@@ -103,6 +103,17 @@ const brandCardsContainer = document.getElementById("brandCardsContainer");
             brandCardsContainer.appendChild(card);
         });
     }
+
+    function mostrarNotificacion(mensaje) {
+        const notificacion = document.getElementById('notificacion');
+        notificacion.textContent = mensaje;
+        notificacion.classList.add('show');
+
+    // La notificación se oculta después de 3 segundos
+    setTimeout(() => {
+    notificacion.classList.remove('show');
+        }, 3000);
+    }
     
     // --- LÓGICA DEL CARRITO ---
     function addToCart(articleId) {
@@ -114,11 +125,16 @@ const brandCardsContainer = document.getElementById("brandCardsContainer");
         if (existingItem) {
             if (existingItem.quantity < articleToAdd.stock) {
                 existingItem.quantity++;
+                // Mostrar notificación de éxito
+                mostrarNotificacion(`'${articleToAdd.name}' añadido al carrito.`);
             } else {
+                // Este alert es para un error, así que lo mantenemos
                 alert(`No puedes agregar más unidades de este producto. Stock disponible: ${articleToAdd.stock}`);
             }
         } else {
             cart.push({ ...articleToAdd, quantity: 1 });
+            // Mostrar notificación de éxito
+            mostrarNotificacion(`'${articleToAdd.name}' añadido al carrito.`);
         }
         renderCart();
     }
