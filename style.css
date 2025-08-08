@@ -1,0 +1,286 @@
+/* General */
+body {
+    font-family: Arial, sans-serif; /* Define la fuente general para la página */
+    margin: 0; /* Elimina los márgenes predeterminados del navegador */
+    padding: 0; /* Elimina los rellenos predeterminados */
+    box-sizing: border-box; /* Asegura que el padding y los bordes se incluyan en el tamaño total del elemento */
+    background-color: #f4f4f4; /* Fondo gris claro para toda la página */
+}
+
+/* Encabezado */
+header {
+    background-color: #00509e; /* Color de fondo azul del encabezado */
+    color: #fff; /* Texto blanco para contraste */
+    padding: 10px 20px; /* Espaciado interno del encabezado */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex; /* Flexbox para alinear elementos en fila */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+.logo {
+    width: 50px; /* Ancho del logo */
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px; /* Espaciado a la derecha del logo */
+}
+
+.logo-container h1 {
+    margin: 0;
+}
+
+/* Barra de navegación */
+.nav-links {
+    list-style: none; /* Elimina los puntos de las listas */
+    display: flex; /* Muestra los elementos en fila */
+    padding: 0; /* Elimina el padding de la lista */
+    margin: 0; /* Elimina el margen de la lista */
+}
+
+.nav-links li {
+    margin: 0 10px; /* Espaciado entre los elementos de la lista */
+}
+
+.nav-links a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #fff; /* Color de los enlaces en blanco */
+    font-weight: bold; /* Resalta los enlaces */
+}
+
+/* Layout Principal */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* Layout para móviles */
+@media (max-width: 1024px) {
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+    .catalog-column {
+        order: 2;
+    }
+    .cart-column {
+        order: 1;
+    }
+}
+
+/* Secciones */
+.section {
+    padding: 20px; /* Espaciado interno para las secciones */
+    margin-bottom: 20px; /* Espaciado externo para separar las secciones */
+    background-color: #fff; /* Fondo blanco para contraste */
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar */
+}
+.section:last-child {
+    margin-bottom: 0;
+}
+
+/* Búsqueda y Formularios */
+.cart-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Botones */
+button {
+    background-color: #00509e; /* Fondo azul para los botones */
+    color: #fff; /* Texto blanco para contraste */
+    border: none; /* Elimina el borde */
+    border-radius: 4px; /* Esquinas redondeadas */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Muestra un puntero para indicar clic */
+    font-size: 1rem; /* Tamaño de fuente estándar */
+    width: 100%;
+}
+
+button:hover {
+    background-color: #003f7d; /* Fondo más oscuro al pasar el cursor */
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Tablas */
+.table-wrapper {
+    overflow-x: auto;
+}
+table {
+    width: 100%; /* Tabla ocupa todo el ancho del contenedor */
+    border-collapse: collapse; /* Elimina los espacios entre celdas */
+}
+
+table th, table td {
+    border: 1px solid #ddd; /* Bordes gris claro */
+    padding: 8px; /* Espaciado interno en celdas */
+    text-align: left; /* Alineación de texto a la izquierda */
+    vertical-align: middle;
+}
+
+table th {
+    background-color: #00509e; /* Fondo azul para encabezados */
+    color: #fff; /* Texto blanco para contraste */
+}
+
+/* --- REGLA ACTUALIZADA --- Estilos para la imagen del producto en la tabla */
+table img {
+    width: 80px;       /* Un tamaño visible y uniforme */
+    height: 80px;      /* Mantenemos la proporción cuadrada */
+    object-fit: cover; /* Cubre el espacio sin deformar la imagen */
+    border-radius: 8px;
+    display: block;    /* Permite centrar la imagen con márgenes automáticos */
+    margin: 0 auto;    /* Centra la imagen horizontalmente */
+}
+
+/* --- NUEVO --- Centrar contenido en la primera celda (columna de la foto) */
+table td:first-child {
+    text-align: center;
+}
+
+.out-of-stock-row {
+    opacity: 0.5;
+    background-color: #f9f9f9;
+}
+
+.status-tag {
+    font-weight: bold;
+    color: #c0392b;
+}
+
+/* Tarjetas de Marcas (antes .product-card) */
+#brandCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.brand-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(25% - 20px);
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+}
+
+.brand-card img {
+    height: 80px; /* --- CAMBIO CLAVE: Altura FIJA para los logos --- */
+    max-width: 120px; /* Ancho máximo para logos anchos */
+    object-fit: contain; /* Asegura que el logo se vea completo sin deformarse */
+    margin-bottom: 15px; /* Espacio entre el logo y el nombre */
+}
+
+.brand-card h3 {
+    margin: 0;
+    font-size: 1em;
+}
+
+
+/* Carrito de Compras */
+.sticky-cart {
+    position: sticky;
+    top: 100px;
+}
+
+#cartItemsContainer {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-details p {
+    margin: 0;
+}
+.cart-item-details .item-name {
+    font-weight: bold;
+}
+.cart-item-details .item-subtotal {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-quantity-change, .cart-remove-item {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 14px;
+}
+.cart-remove-item {
+    background-color: #e74c3c;
+}
+.cart-remove-item:hover {
+    background-color: #c0392b;
+}
+
+#cart-total {
+    border-top: 2px solid #00509e;
+    padding-top: 15px;
+    margin-top: 15px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Pie de página */
+footer {
+    text-align: center; /* Centra el texto del pie de página */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #00509e; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    margin-top: 20px; /* Espaciado superior */
+}

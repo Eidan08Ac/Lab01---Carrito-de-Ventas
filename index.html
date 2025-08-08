@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Documento HTML5 en español -->
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Define la codificación de caracteres UTF-8 para admitir caracteres especiales -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Permite que el diseño sea responsivo -->
+  <title>Peludito Feliz - Carrito de Ventas</title>
+  <!-- Título que aparece en la pestaña del navegador -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Vincula la hoja de estilos externa -->
+</head>
+
+<body>
+  <!-- Cuerpo principal del documento -->
+  <header>
+    <!-- Encabezado de la página -->
+    <nav class="navbar">
+      <!-- Barra de navegación -->
+      <div class="logo-container">
+        <!-- Contenedor para el logo y el título -->
+        <img src="assets/images/Carrito de Ventas.avif" alt="Logo Carrito de Ventas" class="logo">
+        <!-- Logo del carrito -->
+        <h1>Carrito de Ventas</h1>
+        <!-- Título del carrito -->
+      </div>
+      <ul class="nav-links">
+        <!-- Lista de enlaces de navegación -->
+        <li><a href="#cart-form">Carrito</a></li>
+        <li><a href="#article-list">Catálogo</a></li>
+        <li><a href="#brand-list">Marcas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Contenido principal -->
+    <div class="main-container">
+        <!-- Columna de Catálogo y Marcas -->
+        <div class="catalog-column">
+            <!-- Búsqueda -->
+            <form id="search-form" class="section cart-form">
+              <h2>Buscar en el Catálogo</h2>
+              <input type="text" id="searchInput" placeholder="Buscar artículos por nombre...">
+            </form>
+            <!-- Lista de artículos -->
+            <section id="article-list" class="section">
+              <h2>Catálogo de Artículos</h2>
+              <div class="table-wrapper">
+                  <table>
+                    <!-- Tabla de artículos -->
+                    <thead>
+                      <tr>
+                        <th>Foto</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Marca</th>
+                        <th>Precio</th>
+                        <th>Acción</th>
+                      </tr>
+                    </thead>
+                    <tbody id="articleTableBody">
+                      <!-- Cuerpo de la tabla generado por JS -->
+                    </tbody>
+                  </table>
+              </div>
+            </section>
+            <!-- Lista de Marcas -->
+            <section id="brand-list" class="section">
+              <h2>Nuestras Marcas</h2>
+              <div id="brandCardsContainer">
+                <!-- Contenedor de tarjetas de marcas -->
+              </div>
+            </section>
+        </div>
+
+        <!-- Columna de Carrito -->
+        <div class="cart-column">
+            <section id="cart-section" class="section sticky-cart">
+                <h2>Carrito de Compras</h2>
+                <div id="cartItemsContainer">
+                    <p class="empty-cart-message">El carrito está vacío.</p>
+                </div>
+                <div id="cart-total">
+                    <span>Total: $ 0</span>
+                </div>
+                <button id="checkout-btn" disabled>Finalizar Compra</button>
+            </section>
+        </div>
+    </div>
+  </main>
+
+  <footer>
+    <!-- Pie de página -->
+    <p>&copy; 2025 Carrito de Ventas</p>
+    <!-- Derechos reservados -->
+  </footer>
+  <script src="script.js"></script>
+  <!-- Enlace al script JavaScript -->
+</body>
+
+</html>
